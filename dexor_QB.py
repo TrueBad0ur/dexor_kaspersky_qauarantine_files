@@ -2,9 +2,6 @@ import sys
 import os
 from binascii import hexlify
 
-def unxor():
-    pass
-
 def help():
     print('Usage:   python3 dexor_QB.py <folder_with_kasper_files> <folder_to_save_output>')
     print('Usage:   python3 dexor_QB.py "C:\\ProgramData\\Kaspersky Lab\\KES\\QB\\" "C:\\folder\\"')
