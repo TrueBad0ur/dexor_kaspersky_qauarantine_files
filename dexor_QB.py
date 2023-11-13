@@ -17,19 +17,15 @@ def parseFiles(directory, directoryOut):
             key = [0xe2, 0x45, 0x48, 0xec, 0x69, 0x0e, 0x5c, 0xac]
             key = key + key * inFileSize
 
-            # if not os.path.isdir(filename)
             print("\n" + "Filename: " + filename)
 
             inFile.seek(63)
             byte = inFile.read(1)
-            #for i in range(40):
 
             i = 0
             while byte:
                 byte = inFile.read(1)
-                #sys.stdout.buffer.write(byte)
                 outFile.write((int.from_bytes(byte, "big")  ^ key[i]).to_bytes(1, byteorder='big'))
-                #print("0x" + str(hexlify(byte), "utf-8"), end=" ")
                 i += 1
             
             outFile.close()
